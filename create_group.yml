@@ -1,4 +1,5 @@
 - name: Create Platfor Delivery Group
+  hosts: all
   tasks:
     - name: platform-delivery
       group:
