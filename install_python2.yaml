@@ -11,5 +11,5 @@
     register: check_python
 
   - name: Install Python 2
-    raw: test -e /usr/bin/apt && (apt -y update && apt install -y python-minimal) || (yum -y install python libselinux-python)
+    raw: test -e /usr/bin/apt && (apt -y update && apt install -y python-minimal) || (yum -y install python )
     when: check_python.rc != 0
