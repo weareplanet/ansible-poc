@@ -1,10 +1,11 @@
-- name: Create Platfor Delivery Group
+- name: Create Platform Delivery Group
   hosts: all
 
   vars:
     ansible_python_interpreter: "{{ '/usr/bin/python3' }}"
 
   tasks:
-    - name: platform-delivery
+    - name: Create Group
       group:
-      state: present
+        name: platform-delivery
+        state: present
