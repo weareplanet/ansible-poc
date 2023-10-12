@@ -1,0 +1,21 @@
+- name: Apache Configuration
+  hosts: all
+
+  vars:
+    http_port: 80
+    max_clients: 100
+
+  tasks:
+  - name: Ensure Apache is installed
+    yum: name=httpd state=present
+
+  - name: Make changes in Apache config file
+    template: src=httpd.j2 dest=/etc/httpd.conf
+    notify:
+    - restart apache
+  - name: Ensure Apache is running
+    service: name=httpd state=started
+
+  handlers:
+    - name: restart apache
+      service: name=httpd state=restarted
