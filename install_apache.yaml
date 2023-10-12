@@ -1,4 +1,5 @@
 - name: Install Apache and Check if it's running
+  hosts: all
   tasks:
   - name: Ensure Apache latest version is installed
     yum: name=httpd state=latest
