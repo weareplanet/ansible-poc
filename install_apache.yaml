@@ -1,0 +1,5 @@
+- name: Ensure Apache latest version is installed
+  yum: name=httpd state=latest
+
+- name: Ensure Apache is running
+  service: name=httpd state=started

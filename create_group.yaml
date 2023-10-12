@@ -1,0 +1,4 @@
+- name: Create Platfor Delivery Group
+  group:
+    name: platform-delivery
+    state: present
