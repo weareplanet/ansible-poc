@@ -9,7 +9,7 @@
 
   tasks:
   - name: Ensure Apache is installed
-    yum: name=httpd state=present
+    dnf: name=httpd state=present
 
   - name: Make changes in Apache config file
     template: src=httpd.j2 dest=/etc/httpd.conf
